@@ -4,6 +4,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const Sidebar = () => {
+  const createChat = () => {
+    const input = prompt(
+      'Enter the email address for the user you want to chat with'
+    );
+
+    if (!input) return;
+  };
+
   return (
     <Container>
       <Header>
@@ -24,7 +32,7 @@ export const Sidebar = () => {
         <SearchInput placeholder="Search chats" />
       </SearchContainer>
 
-      <SidebarButton>Start a new chat</SidebarButton>
+      <SidebarButton onClick={createChat}>Start a new chat</SidebarButton>
 
       {/* list of conversations */}
     </Container>
