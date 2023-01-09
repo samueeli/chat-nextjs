@@ -2,6 +2,7 @@ import { Chat, MoreVert, Search } from '@mui/icons-material';
 import { Avatar, Button, Icon, IconButton } from '@mui/material';
 import React from 'react';
 import styled from 'styled-components';
+import * as EmailValidator from 'email-validator';
 
 export const Sidebar = () => {
   const createChat = () => {
@@ -10,6 +11,13 @@ export const Sidebar = () => {
     );
 
     if (!input) return;
+
+    if (EmailValidator.validate(input)) {
+      alert('valid email. Yay!');
+      // add chat into the db 'chats' collection
+    } else {
+      alert('Email is not valid');
+    }
   };
 
   return (
